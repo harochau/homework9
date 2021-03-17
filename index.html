@@ -18,7 +18,7 @@
         background-color: khaki;
       }
       article > p {
-        font-size: 32pt;
+        font-size: 25pt;
         text-align: center;
         margin: 10px;
         padding: 10px;
@@ -101,7 +101,7 @@
         let alphas = document.querySelectorAll('section > p:nth-child(odd)');
         let alpha = document.getElementById('alpha');
         for (span of alphas) {
-          alpha.innerHTML += span.innerHTML;
+          alpha.innerHTML += span.innerHTML + ' ';
         }
         but.removeEventListener('click', printAlphabet);
         but.style.visibility = 'hidden';
