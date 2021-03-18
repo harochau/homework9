@@ -1,4 +1,5 @@
 
+
 let menu = document.createElement("div");
 menu.setAttribute("id","menu");
 menu.innerHTML+=`<a href="index.html">Заглавная странца</a>
