@@ -9,6 +9,7 @@
     />
     <title>Lesson9. Homework 9.2</title>
     <link rel="stylesheet" href="menu.css" />
+    
 
     <style>
       body {
@@ -75,6 +76,7 @@
         opacity: 30%;
         background-color: lightslategrey;
         transition: 2s;
+        font-size: 100%;
       }
 
       #before,
@@ -120,16 +122,28 @@
         text-decoration: none;
         color: #000;
         position: absolute;
-        font-size: 2rem;
+        font-size: 12pt;
+        left: 10%;
         top: 1%;
         opacity: 50%;
         margin: 0px auto;
         display: block;
+        border: 2px solid #fff
       }
 
       section:hover {
         background-color: darkslategrey;
       }
+      
+      h2{
+          font-size: 10pt;
+          margin-bottom: 0px;
+          margin-top: 0;
+        }
+        section p{
+          font-size: 8pt;
+          margin: 10px 0;;
+        }
 
       @media screen and (min-width: 600px) {
         #box {
@@ -138,6 +152,15 @@
 
           margin: 0 auto;
         }
+        h2{
+          font-size: 26pt;
+        }
+        section p{
+          font-size: 14pt;
+          margin: 10px 0;;
+        }
+        #visible-link {
+          font-size: 26pt;
 
         body {
           background-color: rgb(233, 228, 238);
@@ -152,6 +175,7 @@
 
   <body>
     <script src="menu.js"></script>
+    <script src="data.js"></script>
 
     <div class="tile" id="box">
       <div id="forpic"></div>
@@ -178,49 +202,9 @@
       </nav>
       <!-- <img id="pic1" src="images/minsk1.jpg" alt="" /> -->
     </div>
-
+    
     <script>
-      let n = 0,
-        p = 5;
-      dataArray = [
-        {
-          to: "https://tut.by",
-          image: "img1b.jpg",
-          title: "Заголовок 1",
-          desc:
-            "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempora, repellendus.",
-        },
-        {
-          to: "https://onliner.by",
-          image: "img2b.jpg",
-          title: "Заголовок 2",
-          desc: "Lorem ipsum dolor sit amet.",
-        },
-        {
-          to: "https://google.by",
-          image: "img3b.jpg",
-          title: "Заголовок 3",
-          desc: "Lorem ipsum dolor, sit amet consectetur adipisicing.",
-        },
-        {
-          to: "https://yandex.by",
-          image: "img4b.jpg",
-          title: "Заголовок 4",
-          desc: "Lorem ipsum dolor, sit amet consectetur adipisicing.",
-        },
-        {
-          to: "https://mail.ru",
-          image: "img5b.jpg",
-          title: "Заголовок 5",
-          desc: "Lorem ipsum dolor, sit amet consectetur adipisicing.",
-        },
-        {
-          to: "http://ya.ru",
-          image: "img6b.jpg",
-          title: "Заголовок 6",
-          desc: "Lorem ipsum dolor, sit amet consectetur adipisicing.",
-        },
-      ];
+      
 
       function nextSlide() {
         if (n > p) {
