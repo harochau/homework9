@@ -1,258 +1,290 @@
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <title>Lesson9. Homework 9.2</title>
+    <link rel="stylesheet" href="menu.css" />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-  <title>Lesson9. Homework 9.2</title>
-  <link rel="stylesheet" href="menu.css" />
-
-  <style>
-    body {
-      animation: opac1 1s;
-    }
-
-    @keyframes opac1 {
-      from {
-        opacity: 0;
-      }
-
-      to {
-        opacity: 1;
-      }
-    }
-
-    .tile {
-      /* background-color: darkseagreen; */
-      border: 1px solid blue;
-    }
-
-    .tile::before {
-      content: '';
-      float: left;
-      padding-bottom: 72.7%;
-    }
-
-    .tile::after {
-      clear: left;
-      content: ' ';
-      display: table;
-    }
-
-    #box {
-      border: 1px solid blue;
-      transition: 0.7s;
-      position: relative;
-
-    }
-
-    #box>img {
-      /* width: 100%; */
-    }
-
-    #box:hover {
-      filter: brightness(80%);
-    }
-
-    nav {
-      width: 100%;
-      margin: 0 auto;
-      position: absolute;
-      top: 40%;
-    }
-
-    section {
-      width: 100%;
-      margin: 0 auto;
-      position: absolute;
-      /* top: -140px; */
-      top: 66%;
-      left: 0px;
-      width: 100%;
-      height: 34%;
-      opacity: 30%;
-      background-color: lightslategrey;
-      transition: 2s;
-    }
-
-    #before,
-    #next {
-      width: 70px;
-      /* border: 1px solid blue; */
-      /* position: relative; */
-    }
-
-    #before {
-      float: left;
-    }
-
-    #next {
-      float: right;
-    }
-
-    .material-icons {
-      font-size: 70px;
-      color: #fff;
-    }
-
-    .material-icons:hover {
-      transition: 0.6s;
-      color: aqua;
-    }
-
-    #forpic>img {
-      width: 100%;
-    }
-
-    #visible-link:visited {
-      color: #000;
-    }
-
-    #visible-link {
-      text-decoration: none;
-      color: #000;
-      position: absolute;
-      font-size: 2rem;
-      top: 1%;
-      opacity: 50%;
-      margin: 0px auto;
-      display: block;
-
-
-    }
-
-    section:hover {
-      background-color: darkslategrey;
-    }
-
-    @media screen and (min-width: 600px) {
-      #box {
-        width: 550px;
-        height: 400px;
-
-        margin: 0 auto;
-      }
-
+    <style>
       body {
-        background-color: rgb(233, 228, 238);
+        animation: opac1 1s;
+      }
+
+      @keyframes opac1 {
+        from {
+          opacity: 0;
+        }
+
+        to {
+          opacity: 1;
+        }
+      }
+
+      .tile {
+        /* background-color: darkseagreen; */
+        border: 1px solid blue;
+      }
+
+      .tile::before {
+        content: "";
+        float: left;
+        padding-bottom: 72.7%;
+      }
+
+      .tile::after {
+        clear: left;
+        content: " ";
+        display: table;
+      }
+
+      #box {
+        border: 1px solid blue;
+        transition: 0.7s;
+        position: relative;
+      }
+
+      #box > img {
+        /* width: 100%; */
+      }
+
+      #box:hover {
+        filter: brightness(80%);
       }
 
       nav {
-        width: 550px;
+        width: 100%;
+        margin: 0 auto;
+        position: absolute;
+        top: 40%;
       }
-    }
-  </style>
-</head>
 
-<body>
-  <script src='menu.js'></script>
-
-  <div class="tile" id="box">
-    <div id="forpic"></div>
-    <section>
-      <a href="javascript:link()">
-        <h2>Описание</h2>
-        <p>Описание картинки</p>
-      </a>
-    </section>
-    <a id="visible-link" href="javascript:link()">Ссылка</a>
-
-    <nav>
-      <div id="before">
-        <a href="javascript:bef()"><span class="material-icons"> navigate_before </span></a>
-      </div>
-
-      <div id="next">
-        <a href="javascript:nex()"><span class="material-icons"> navigate_next </span></a>
-      </div>
-    </nav>
-    <!-- <img id="pic1" src="images/minsk1.jpg" alt="" /> -->
-
-  </div>
-
-
-
-
-
-
-  <script>
-    let n = 0,
-      p = 5;
-    dataArray = [{ to: 'https://tut.by', image: 'img1b.jpg', title: "Заголовок 1", desc: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempora, repellendus." },
-    { to: 'https://onliner.by', image: 'img2b.jpg', title: "Заголовок 2", desc: "Lorem ipsum dolor sit amet." },
-    { to: 'https://google.by', image: 'img3b.jpg', title: "Заголовок 3", desc: "Lorem ipsum dolor, sit amet consectetur adipisicing." },
-    { to: 'https://yandex.by', image: 'img4b.jpg', title: "Заголовок 4", desc: "Lorem ipsum dolor, sit amet consectetur adipisicing." },
-    { to: 'https://mail.ru', image: 'img5b.jpg', title: "Заголовок 5", desc: "Lorem ipsum dolor, sit amet consectetur adipisicing." },
-    { to: 'http://ya.ru', image: 'img6b.jpg', title: "Заголовок 6", desc: "Lorem ipsum dolor, sit amet consectetur adipisicing." }
-
-    ]
-
-    function nextSlide() {
-      if (n > p) {
-        n = 0;
+      section {
+        width: 100%;
+        margin: 0 auto;
+        position: absolute;
+        /* top: -140px; */
+        top: 66%;
+        left: 0px;
+        width: 100%;
+        height: 34%;
+        opacity: 30%;
+        background-color: lightslategrey;
+        transition: 2s;
       }
-      forpic.innerHTML = `<img id="pic1" src="images/${dataArray[n].image}" alt=""
+
+      #before,
+      #next {
+        width: 70px;
+        /* border: 1px solid blue; */
+        /* position: relative; */
+      }
+
+      #before {
+        float: left;
+      }
+
+      #next {
+        float: right;
+      }
+
+      .material-icons {
+        font-size: 70px;
+        color: #fff;
+      }
+
+      .material-icons:hover {
+        transition: 0.6s;
+        color: aqua;
+      }
+
+      #forpic > img {
+        width: 100%;
+      }
+
+      #visible-link:visited {
+        color: #000;
+      }
+      a,
+      a:hover,
+      a:visited,
+      a:active {
+        color: inherit;
+        text-decoration: none;
+      }
+      #visible-link {
+        text-decoration: none;
+        color: #000;
+        position: absolute;
+        font-size: 2rem;
+        top: 1%;
+        opacity: 50%;
+        margin: 0px auto;
+        display: block;
+      }
+
+      section:hover {
+        background-color: darkslategrey;
+      }
+
+      @media screen and (min-width: 600px) {
+        #box {
+          width: 550px;
+          height: 400px;
+
+          margin: 0 auto;
+        }
+
+        body {
+          background-color: rgb(233, 228, 238);
+        }
+
+        nav {
+          width: 550px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <script src="menu.js"></script>
+
+    <div class="tile" id="box">
+      <div id="forpic"></div>
+      <section>
+        <a href="javascript:link()">
+          <h2>Описание</h2>
+          <p>Описание картинки</p>
+        </a>
+      </section>
+      <a id="visible-link" href="javascript:link()">Ссылка</a>
+
+      <nav>
+        <div id="before">
+          <a href="javascript:bef()"
+            ><span class="material-icons"> navigate_before </span></a
+          >
+        </div>
+
+        <div id="next">
+          <a href="javascript:nex()"
+            ><span class="material-icons"> navigate_next </span></a
+          >
+        </div>
+      </nav>
+      <!-- <img id="pic1" src="images/minsk1.jpg" alt="" /> -->
+    </div>
+
+    <script>
+      let n = 0,
+        p = 5;
+      dataArray = [
+        {
+          to: "https://tut.by",
+          image: "img1b.jpg",
+          title: "Заголовок 1",
+          desc:
+            "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempora, repellendus.",
+        },
+        {
+          to: "https://onliner.by",
+          image: "img2b.jpg",
+          title: "Заголовок 2",
+          desc: "Lorem ipsum dolor sit amet.",
+        },
+        {
+          to: "https://google.by",
+          image: "img3b.jpg",
+          title: "Заголовок 3",
+          desc: "Lorem ipsum dolor, sit amet consectetur adipisicing.",
+        },
+        {
+          to: "https://yandex.by",
+          image: "img4b.jpg",
+          title: "Заголовок 4",
+          desc: "Lorem ipsum dolor, sit amet consectetur adipisicing.",
+        },
+        {
+          to: "https://mail.ru",
+          image: "img5b.jpg",
+          title: "Заголовок 5",
+          desc: "Lorem ipsum dolor, sit amet consectetur adipisicing.",
+        },
+        {
+          to: "http://ya.ru",
+          image: "img6b.jpg",
+          title: "Заголовок 6",
+          desc: "Lorem ipsum dolor, sit amet consectetur adipisicing.",
+        },
+      ];
+
+      function nextSlide() {
+        if (n > p) {
+          n = 0;
+        }
+        forpic.innerHTML = `<img id="pic1" src="images/${dataArray[n].image}" alt=""
     />`;
-      document.querySelector("#box section h2").innerHTML = dataArray[n].title;
-      document.querySelector("#box section p").innerHTML = dataArray[n].desc;
-      let ref = dataArray[n].to;
-      // console.log(ref.substring(ref.indexOf('//') + 2));
-      try {
-        document.querySelector("#box> a").innerHTML = ref.substring(ref.indexOf('//') + 2);
+        document.querySelector("#box section h2").innerHTML =
+          dataArray[n].title;
+        document.querySelector("#box section p").innerHTML = dataArray[n].desc;
+        let ref = dataArray[n].to;
+        // console.log(ref.substring(ref.indexOf('//') + 2));
+        try {
+          document.querySelector("#box> a").innerHTML = ref.substring(
+            ref.indexOf("//") + 2
+          );
+        } catch (error) {
+          clg("Wrong link format?\n" + error);
+        }
 
-      } catch (error) {
-        clg("Wrong link format?\n" + error)
+        pic1.style.animation = "opac1 1s";
+        stop();
+        n++;
+      }
+      function start() {
+        nextSlide();
+        timerId = setTimeout(start, 1500);
       }
 
-      pic1.style.animation = 'opac1 1s';
-      stop();
-      n++;
-    }
-    function start() {
-      nextSlide();
-      timerId = setTimeout(start, 1500);
-
-    }
-
-    function link() {
-      window.location.href = dataArray[n - 1].to;
-    }
-    function stop() {
-      try {
-        clearTimeout(timerId);
-        // console.log(timerId);
-      } catch (err) {
-        console.log(err);
+      function link() {
+        window.location.href = dataArray[n - 1].to;
       }
-    }
-    function nex() {
-      stop();
-      // stop();
-      nextSlide();
-    }
-    function bef() {
-      stop();
-      n--;
-      n--;
-      if (n < 0) {
-        n = p;
+      function stop() {
+        try {
+          clearTimeout(timerId);
+          // console.log(timerId);
+        } catch (err) {
+          console.log(err);
+        }
       }
-      nextSlide();
-    }
-    addEventListener('load', () => {
-      stop();
-      timerId = setTimeout(start, 300);
-    });
-    document.getElementById('box').addEventListener('mouseover', stop);
+      function nex() {
+        stop();
+        // stop();
+        nextSlide();
+      }
+      function bef() {
+        stop();
+        n--;
+        n--;
+        if (n < 0) {
+          n = p;
+        }
+        nextSlide();
+      }
+      addEventListener("load", () => {
+        stop();
+        timerId = setTimeout(start, 300);
+      });
+      document.getElementById("box").addEventListener("mouseover", stop);
 
-    document
-      .getElementById('box')
-      .addEventListener(
-        'mouseout',
-        () => { stop(); timerId = setTimeout(start, 1500) }
-      );
-  </script>
-</body>
-
+      document.getElementById("box").addEventListener("mouseout", () => {
+        stop();
+        timerId = setTimeout(start, 1500);
+      });
+    </script>
+  </body>
 </html>
